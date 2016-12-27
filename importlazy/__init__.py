@@ -1,7 +1,6 @@
 from types import ModuleType
 import sys
 import importlib
-import pprint
 
 
 def initpkg(pkgname, exportdefs):
@@ -12,11 +11,11 @@ def initpkg(pkgname, exportdefs):
         '__path__': getattr(oldmod, '__path__', None),
         '__version__': getattr(oldmod, '__version__', None),
     }
-    lazymodule = SleepingModule(pkgname, exportdefs,prefix=pkgname, attr=attr)
+    lazymodule = SleepingModule(pkgname, exportdefs, prefix=pkgname, attr=attr)
     sys.modules[pkgname] = lazymodule
 
 
-def import_now(modpath, attrname):
+def importnow(modpath, attrname):
     # print("Modpath: {}, attrname: {}".format(modpath, attrname))
     # Use import_module() instead of __import__(), https://docs.python.org/3.6/library/functions.html#__import__
     module = importlib.import_module(modpath)
@@ -66,7 +65,7 @@ class SleepingModule(ModuleType):
             modpath, attrname = self.__map__[name]
         except KeyError:
             raise AttributeError(name)
-        result = import_now(modpath, attrname)
+        result = importnow(modpath, attrname)
         setattr(self, name, result)
         return result
 
