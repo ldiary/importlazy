@@ -1,7 +1,7 @@
 """
 To run this test:
 1. cd importlazy/tests
-2. python -m unittest test_importlazy.py
+2. python -m unittest test_use_project_awesome.py
 """
 
 import unittest
@@ -14,7 +14,7 @@ class ImportLazyTest(unittest.TestCase):
         """Initially, the module must not exist in the imported modules.
         The package or module should not be imported during the initial state.
         """
-        assert 'test_importlazy' in sys.modules
+        assert 'test_use_project_awesome' in sys.modules
         assert 'project_awesome' not in sys.modules
         assert 'project_awesome.bed' not in sys.modules
         assert 'a_module' not in sys.modules
