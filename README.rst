@@ -1,6 +1,9 @@
 .. image:: https://travis-ci.org/ldiary/importlazy.svg?branch=master
     :target: https://travis-ci.org/ldiary/importlazy
     :alt: See Build Status on Travis CI
+.. image:: https://ci.appveyor.com/api/projects/status/github/ldiary/importlazy?branch=master
+    :target: https://ci.appveyor.com/project/ldiary/importlazy/branch/master
+    :alt: See Build Status on AppVeyor
 
 importlazy
 ------------
