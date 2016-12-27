@@ -6,17 +6,18 @@ environment:
     CMD_IN_ENV: "cmd /E:ON /V:ON /C .\\appveyor\\run_with_env.cmd"
 
   matrix:
-
     - PYTHON: "C:\\Python35-x64"
       PYTHON_VERSION: "3.5.0"
       PYTHON_ARCH: "64"
+
+install:
+  # We need wheel installed to build wheels
+  - "%PYTHON%\\python.exe -m pip install wheel"
 
 build: off
 
 
 test_script:
   # Run the project tests
-  - pwd
-  - ls -alh
-  - cd tests
-  - python -m unittest test_use_project_awesome.py"
+  - "build.cmd %PYTHON%\\pwd"
+  - "%PYTHON%\\ls -alh"
