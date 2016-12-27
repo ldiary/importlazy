@@ -16,4 +16,5 @@ build: off
 
 test_script:
   # Run the project tests
-  - "%CMD_IN_ENV% cd tests; python -m unittest test_use_project_awesome.py"
+  - pwd
+  - cd tests; python -m unittest test_use_project_awesome.py"
