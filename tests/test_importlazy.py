@@ -37,5 +37,6 @@ class ImportLazyTest(unittest.TestCase):
 
         # Check that we can really create an instance of the imported class
         one = firstpkg.path.ClassOne()
-        assert isinstance(one, firstpkg.path.ClassOne)
+        from firstpkg.a_module import AModuleClassOne
+        assert isinstance(one, AModuleClassOne)
 
