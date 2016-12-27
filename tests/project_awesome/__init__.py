@@ -20,7 +20,7 @@ from importlazy import initpkg
 
 
 initpkg(__name__, {
-    'path': {
+    'bed': {
         'ClassOne': ".a_module:AModuleClassOne"
     }
 })

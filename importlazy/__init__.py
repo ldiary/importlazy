@@ -61,10 +61,7 @@ class SleepingModule(ModuleType):
         return '<SleepingModule {}>'.format(self.__name__)
 
     def __makeattr(self, name):
-        try:
-            modpath, attrname = self.__map__[name]
-        except KeyError:
-            raise AttributeError(name)
+        modpath, attrname = self.__map__[name]
         result = importnow(modpath, attrname)
         setattr(self, name, result)
         return result
