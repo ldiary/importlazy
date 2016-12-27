@@ -11,6 +11,8 @@ environment:
       PYTHON_VERSION: "3.5.0"
       PYTHON_ARCH: "64"
 
+build: off
+
 
 test_script:
   # Run the project tests
