@@ -19,5 +19,5 @@ build: off
 
 test_script:
   # Run the project tests
-  - "%PYTHON%\\pwd"
-  - "%PYTHON%\\ls -alh"
+  - cd tests
+  - "%PYTHON%\\python.exe -m unittest test_use_project_awesome.py"
