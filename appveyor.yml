@@ -19,5 +19,5 @@ build: off
 
 test_script:
   # Run the project tests
-  - "build.cmd %PYTHON%\\pwd"
+  - "%PYTHON%\\pwd"
   - "%PYTHON%\\ls -alh"
