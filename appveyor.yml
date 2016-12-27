@@ -17,4 +17,6 @@ build: off
 test_script:
   # Run the project tests
   - pwd
-  - cd tests; python -m unittest test_use_project_awesome.py"
+  - ls -alh
+  - cd tests
+  - python -m unittest test_use_project_awesome.py"
